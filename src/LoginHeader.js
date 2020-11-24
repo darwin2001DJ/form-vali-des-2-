@@ -1,5 +1,13 @@
-import React from "react";
-
-export default function LoginHeader() {
-  return <div id="header-content">Admin Login</div>;
+import React, { Component } from "react";
+import user from "./images/user.png";
+export default class LoginHeader extends Component {
+  render() {
+    const { userType } = this.props;
+    return (
+      <div id="header-content">
+        {userType ? "User Details" : "user"}
+        {userType ? <img id="user-logo" src={user} /> : <></>}
+      </div>
+    );
+  }
 }
